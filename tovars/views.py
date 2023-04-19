@@ -16,3 +16,16 @@ def tovar_view(request):
         }
 
         return render(request, 'tovars/tovars.html', context=context)
+
+def tovar_detail_view(request, id):
+    if request.method =='GET':
+        tovar = Tovar.objects.get(id=id)
+
+        context = {
+            'tovar': tovar
+        }
+        return render(request, 'tovars/detail.html', context=context)
+
+
+
+

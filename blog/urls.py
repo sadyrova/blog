@@ -16,8 +16,8 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
-from posts.views import main_page_view, post_view
-from tovars.views import main_page_view, tovar_view
+from posts.views import main_page_view, post_view, post_detail_view
+from tovars.views import main_page_view, tovar_view, tovar_detail_view
 
 
 
@@ -25,5 +25,7 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('', main_page_view),
     path('posts/', post_view),
-    path('tovars/', tovar_view)
+    path('tovars/', tovar_view),
+    path('posts/<int:id>/', post_detail_view),
+    path('tovars/<int:id>/', tovar_detail_view)
 ]

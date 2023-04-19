@@ -1,0 +1,26 @@
+{% extends 'layouts/index.html' %}
+
+{% block content %}
+    <style type="text/css">
+        .post_block {
+            width: 80%;
+            margin-left: 10%;
+        }
+        .dates {
+            display: flex;
+            justify-content: space-between;
+        }
+    </style>
+     <div class="post_block">
+         <div class="info">
+             <h1>{{ tovar.title }}</h1>
+             <h4>{{ tovar.description }}</h4>
+             <h5>{{ tovar.price }}</h5>
+             <h5>{{ tovar.quantity }}</h5>
+             <div class="dates">
+                 <h5>Created Date {{ tovar.created_date }}</h5>
+                 <h5>Modified Date {{ tovar.modified_date }}</h5>
+
+             </div>
+         </div>
+{% endblock %}
