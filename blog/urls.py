@@ -16,8 +16,14 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
+
+from blog import settings
 from posts.views import main_page_view, post_view, post_detail_view
 from tovars.views import main_page_view, tovar_view, tovar_detail_view
+from django.conf.urls.static import static
+
+"""client ->/
+    DJANGO: client"""
 
 
 
@@ -29,3 +35,5 @@ urlpatterns = [
     path('posts/<int:id>/', post_detail_view),
     path('tovars/<int:id>/', tovar_detail_view)
 ]
+
+urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

@@ -22,7 +22,8 @@ def tovar_detail_view(request, id):
         tovar = Tovar.objects.get(id=id)
 
         context = {
-            'tovar': tovar
+            'tovar': tovar,
+            'comments': tovar.comment_set.all()
         }
         return render(request, 'tovars/detail.html', context=context)
 
