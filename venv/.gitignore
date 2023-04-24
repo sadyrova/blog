@@ -1,0 +1,10 @@
+# created by virtualenv automatically
+Include
+Lib
+Scripts
+pyvenv.cfg
+.idea
+my_env
+venv
+6.png
+10.png
