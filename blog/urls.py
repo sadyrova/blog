@@ -19,7 +19,7 @@ from django.urls import path
 
 from blog import settings
 from posts.views import main_page_view, post_view, post_detail_view
-from tovars.views import main_page_view, tovar_view, tovar_detail_view
+from tovars.views import main_page_view, tovar_view, tovar_detail_view, tovar_create_view, review_create_view
 from django.conf.urls.static import static
 
 """client ->/
@@ -33,7 +33,9 @@ urlpatterns = [
     path('posts/', post_view),
     path('tovars/', tovar_view),
     path('posts/<int:id>/', post_detail_view),
-    path('tovars/<int:id>/', tovar_detail_view)
+    path('tovars/<int:id>/', tovar_detail_view),
+    path('tovars/create/', tovar_create_view),
+    path('tovars/create/', review_create_view)
 ]
 
 urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
